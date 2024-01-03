@@ -210,7 +210,7 @@ func Spoiler() (string, error) {
 
 func Wallpaper() (string, error) {
 	return getInternal[resUrl](pathWallpaper)
-}URLSearchParams
+}
 
 func Goose() (string, error) {
 	return getInternal[resUrl](pathGoose)
