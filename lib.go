@@ -28,4 +28,4 @@ func Wallpaper() string  { return "" }
 func Goose() string      { return "" }
 func Gecg() string       { return "" }
 func Avatar() string     { return "" }
-func waifu() string      { return "" }
+func Waifu() string      { return "" }
