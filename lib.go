@@ -55,31 +55,425 @@ func Tickle() (string, error) {
 
 	return url.url, nil
 }
-func Slap() string       { return "" }
-func Poke() string       { return "" }
-func Pat() string        { return "" }
-func Neko() string       { return "" }
-func Meow() string       { return "" }
-func Lizard() string     { return "" }
-func Kiss() string       { return "" }
-func Hug() string        { return "" }
-func FoxGirl() string    { return "" }
-func Feed() string       { return "" }
-func Cuddle() string     { return "" }
-func Why() string        { return "" }
-func CatText() string    { return "" }
-func OwOify() string     { return "" }
-func EightBall() string  { return "" }
-func Fact() string       { return "" }
-func NekoGif() string    { return "" }
-func Kemonomimi() string { return "" }
-func Holo() string       { return "" }
-func Smug() string       { return "" }
-func Baka() string       { return "" }
-func Woof() string       { return "" }
-func Spoiler() string    { return "" }
-func Wallpaper() string  { return "" }
-func Goose() string      { return "" }
-func Gecg() string       { return "" }
-func Avatar() string     { return "" }
-func Waifu() string      { return "" }
+
+func Slap() (string, error) {
+	res, err := http.Get(endPoint + pathSlap)
+	if err != nil {
+		return "", err
+	}
+
+	var url resUrl
+	err = json.NewDecoder(res.Body).Decode(&url)
+	if err != nil {
+		return "", err
+	}
+
+	return url.url, nil
+}
+
+func Poke() (string, error) {
+	res, err := http.Get(endPoint + pathPoke)
+	if err != nil {
+		return "", err
+	}
+
+	var url resUrl
+	err = json.NewDecoder(res.Body).Decode(&url)
+	if err != nil {
+		return "", err
+	}
+
+	return url.url, nil
+}
+
+func Pat() (string, error) {
+	res, err := http.Get(endPoint + pathPat)
+	if err != nil {
+		return "", err
+	}
+
+	var url resUrl
+	err = json.NewDecoder(res.Body).Decode(&url)
+	if err != nil {
+		return "", err
+	}
+
+	return url.url, nil
+}
+
+func Neko() (string, error) {
+	res, err := http.Get(endPoint + pathNeko)
+	if err != nil {
+		return "", err
+	}
+
+	var url resUrl
+	err = json.NewDecoder(res.Body).Decode(&url)
+	if err != nil {
+		return "", err
+	}
+
+	return url.url, nil
+}
+
+func Meow() (string, error) {
+	res, err := http.Get(endPoint + pathMeow)
+	if err != nil {
+		return "", err
+	}
+
+	var url resUrl
+	err = json.NewDecoder(res.Body).Decode(&url)
+	if err != nil {
+		return "", err
+	}
+
+	return url.url, nil
+}
+
+func Lizard() (string, error) {
+	res, err := http.Get(endPoint + pathLizard)
+	if err != nil {
+		return "", err
+	}
+
+	var url resUrl
+	err = json.NewDecoder(res.Body).Decode(&url)
+	if err != nil {
+		return "", err
+	}
+
+	return url.url, nil
+}
+
+func Kiss() (string, error) {
+	res, err := http.Get(endPoint + pathKiss)
+	if err != nil {
+		return "", err
+	}
+
+	var url resUrl
+	err = json.NewDecoder(res.Body).Decode(&url)
+	if err != nil {
+		return "", err
+	}
+
+	return url.url, nil
+}
+
+func Hug() (string, error) {
+	res, err := http.Get(endPoint + pathHug)
+	if err != nil {
+		return "", err
+	}
+
+	var url resUrl
+	err = json.NewDecoder(res.Body).Decode(&url)
+	if err != nil {
+		return "", err
+	}
+
+	return url.url, nil
+}
+
+func FoxGirl() (string, error) {
+	res, err := http.Get(endPoint + pathFoxGirl)
+	if err != nil {
+		return "", err
+	}
+
+	var url resUrl
+	err = json.NewDecoder(res.Body).Decode(&url)
+	if err != nil {
+		return "", err
+	}
+
+	return url.url, nil
+}
+
+func Feed() (string, error) {
+	res, err := http.Get(endPoint + pathFeed)
+	if err != nil {
+		return "", err
+	}
+
+	var url resUrl
+	err = json.NewDecoder(res.Body).Decode(&url)
+	if err != nil {
+		return "", err
+	}
+
+	return url.url, nil
+}
+
+func Cuddle() (string, error) {
+	res, err := http.Get(endPoint + pathCuddle)
+	if err != nil {
+		return "", err
+	}
+
+	var url resUrl
+	err = json.NewDecoder(res.Body).Decode(&url)
+	if err != nil {
+		return "", err
+	}
+
+	return url.url, nil
+}
+
+func Why() (string, error) {
+	res, err := http.Get(endPoint + pathWhy)
+	if err != nil {
+		return "", err
+	}
+
+	var url resUrl
+	err = json.NewDecoder(res.Body).Decode(&url)
+	if err != nil {
+		return "", err
+	}
+
+	return url.url, nil
+}
+
+func CatText() (string, error) {
+	res, err := http.Get(endPoint + pathCatText)
+	if err != nil {
+		return "", err
+	}
+
+	var url resUrl
+	err = json.NewDecoder(res.Body).Decode(&url)
+	if err != nil {
+		return "", err
+	}
+
+	return url.url, nil
+}
+
+func OwOify() (string, error) {
+	res, err := http.Get(endPoint + pathOwOify)
+	if err != nil {
+		return "", err
+	}
+
+	var url resUrl
+	err = json.NewDecoder(res.Body).Decode(&url)
+	if err != nil {
+		return "", err
+	}
+
+	return url.url, nil
+}
+
+func EightBall() (string, error) {
+	res, err := http.Get(endPoint + pathEightBall)
+	if err != nil {
+		return "", err
+	}
+
+	var url resUrl
+	err = json.NewDecoder(res.Body).Decode(&url)
+	if err != nil {
+		return "", err
+	}
+
+	return url.url, nil
+}
+
+func Fact() (string, error) {
+	res, err := http.Get(endPoint + pathFact)
+	if err != nil {
+		return "", err
+	}
+
+	var url resUrl
+	err = json.NewDecoder(res.Body).Decode(&url)
+	if err != nil {
+		return "", err
+	}
+
+	return url.url, nil
+}
+
+func NekoGif() (string, error) {
+
+	res, err := http.Get(endPoint + pathNekoGif)
+	if err != nil {
+		return "", err
+	}
+
+	var url resUrl
+	err = json.NewDecoder(res.Body).Decode(&url)
+	if err != nil {
+		return "", err
+	}
+
+	return url.url, nil
+}
+
+func Kemonomimi() (string, error) {
+
+	res, err := http.Get(endPoint + pathKemonomimi)
+	if err != nil {
+		return "", err
+	}
+
+	var url resUrl
+	err = json.NewDecoder(res.Body).Decode(&url)
+	if err != nil {
+		return "", err
+	}
+
+	return url.url, nil
+}
+
+func Holo() (string, error) {
+	res, err := http.Get(endPoint + pathHolo)
+	if err != nil {
+		return "", err
+	}
+
+	var url resUrl
+	err = json.NewDecoder(res.Body).Decode(&url)
+	if err != nil {
+		return "", err
+	}
+
+	return url.url, nil
+}
+
+func Smug() (string, error) {
+	res, err := http.Get(endPoint + pathSmug)
+	if err != nil {
+		return "", err
+	}
+
+	var url resUrl
+	err = json.NewDecoder(res.Body).Decode(&url)
+	if err != nil {
+		return "", err
+	}
+
+	return url.url, nil
+}
+
+func Baka() (string, error) {
+	res, err := http.Get(endPoint + pathBaka)
+	if err != nil {
+		return "", err
+	}
+
+	var url resUrl
+	err = json.NewDecoder(res.Body).Decode(&url)
+	if err != nil {
+		return "", err
+	}
+
+	return url.url, nil
+}
+
+func Woof() (string, error) {
+	res, err := http.Get(endPoint + pathWoof)
+	if err != nil {
+		return "", err
+	}
+
+	var url resUrl
+	err = json.NewDecoder(res.Body).Decode(&url)
+	if err != nil {
+		return "", err
+	}
+
+	return url.url, nil
+}
+
+func Spoiler() (string, error) {
+	res, err := http.Get(endPoint + pathSpoiler)
+	if err != nil {
+		return "", err
+	}
+
+	var url resUrl
+	err = json.NewDecoder(res.Body).Decode(&url)
+	if err != nil {
+		return "", err
+	}
+
+	return url.url, nil
+}
+
+func Wallpaper() (string, error) {
+	res, err := http.Get(endPoint + pathWallpaper)
+	if err != nil {
+		return "", err
+	}
+
+	var url resUrl
+	err = json.NewDecoder(res.Body).Decode(&url)
+	if err != nil {
+		return "", err
+	}
+
+	return url.url, nil
+}
+
+func Goose() (string, error) {
+	res, err := http.Get(endPoint + pathGoose)
+	if err != nil {
+		return "", err
+	}
+
+	var url resUrl
+	err = json.NewDecoder(res.Body).Decode(&url)
+	if err != nil {
+		return "", err
+	}
+
+	return url.url, nil
+}
+
+func Gecg() (string, error) {
+	res, err := http.Get(endPoint + pathGecg)
+	if err != nil {
+		return "", err
+	}
+
+	var url resUrl
+	err = json.NewDecoder(res.Body).Decode(&url)
+	if err != nil {
+		return "", err
+	}
+
+	return url.url, nil
+}
+
+func Avatar() (string, error) {
+	res, err := http.Get(endPoint + pathAvatar)
+	if err != nil {
+		return "", err
+	}
+
+	var url resUrl
+	err = json.NewDecoder(res.Body).Decode(&url)
+	if err != nil {
+		return "", err
+	}
+
+	return url.url, nil
+}
+
+func Waifu() (string, error) {
+	res, err := http.Get(endPoint + pathWaifu)
+	if err != nil {
+		return "", err
+	}
+
+	var url resUrl
+	err = json.NewDecoder(res.Body).Decode(&url)
+	if err != nil {
+		return "", err
+	}
+
+	return url.url, nil
+}
