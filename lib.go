@@ -81,6 +81,11 @@ func (r resFact) primary() string {
 	return r.fact
 }
 
+type EightBallResult struct {
+	response string
+	url string
+}
+
 func getInternal[T res](path string) (string, error) {
 	res, err := http.Get(endPoint + path)
 	if err != nil {
@@ -156,19 +161,19 @@ func OwOify() (string, error) {
 	return getInternal[resOwOify](pathOwOify)
 }
 
-func EightBall() (string, error) {
+func EightBall() (EightBallResult, error) {
 	res, err := http.Get(endPoint + pathEightBall)
 	if err != nil {
 		return "", err
 	}
 
-	var url resUrl
-	err = json.NewDecoder(res.Body).Decode(&url)
+	var body EightBallResult
+	err = json.NewDecoder(res.Body).Decode(&body)
 	if err != nil {
 		return "", err
 	}
 
-	return url.url, nil
+	return body, nil
 }
 
 func Fact() (string, error) {
