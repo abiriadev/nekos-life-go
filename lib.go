@@ -37,24 +37,48 @@ const pathGecg = "/img/gecg"
 const pathAvatar = "/img/avatar"
 const pathWaifu = "/img/waifu"
 
+type res interface {
+	primary() string
+}
+
 type resUrl struct {
 	url string
+}
+
+func (r *resUrl) primary() string {
+	return r.url
 }
 
 type resCat struct {
 	cat string
 }
 
+func (r *resCat) primary() string {
+	return r.cat
+}
+
 type resWhy struct {
 	why string
+}
+
+func (r *resWhy) primary() string {
+	return r.why
 }
 
 type resOwOify struct {
 	owo string
 }
 
+func (r *resOwOify) primary() string {
+	return r.owo
+}
+
 type resFact struct {
 	fact string
+}
+
+func (r *resFact) primary() string {
+	return r.fact
 }
 
 func Tickle() (string, error) {
