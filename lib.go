@@ -1,5 +1,12 @@
 package nekoslifego
 
+import (
+	"encoding/json"
+	"net/http"
+)
+
+const endPoint = "https://nekos.life/api/v2"
+
 const pathTickle = "/img/tickle"
 const pathSlap = "/img/slap"
 const pathPoke = "/img/poke"
@@ -30,7 +37,24 @@ const pathGecg = "/img/gecg"
 const pathAvatar = "/img/avatar"
 const pathWaifu = "/img/waifu"
 
-func Tickle() string     { return "" }
+type resUrl struct {
+	url string
+}
+
+func Tickle() (string, error) {
+	res, err := http.Get(endPoint + pathTickle)
+	if err != nil {
+		return "", err
+	}
+
+	var url resUrl
+	err = json.NewDecoder(res.Body).Decode(&url)
+	if err != nil {
+		return "", err
+	}
+
+	return url.url, nil
+}
 func Slap() string       { return "" }
 func Poke() string       { return "" }
 func Pat() string        { return "" }
