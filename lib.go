@@ -83,7 +83,7 @@ func (r resFact) primary() string {
 
 type EightBallResult struct {
 	response string
-	url string
+	url      string
 }
 
 func getInternal[T res](path string) (string, error) {
@@ -164,13 +164,13 @@ func OwOify() (string, error) {
 func EightBall() (EightBallResult, error) {
 	res, err := http.Get(endPoint + pathEightBall)
 	if err != nil {
-		return "", err
+		return EightBallResult{}, err
 	}
 
 	var body EightBallResult
 	err = json.NewDecoder(res.Body).Decode(&body)
 	if err != nil {
-		return "", err
+		return EightBallResult{}, err
 	}
 
 	return body, nil
