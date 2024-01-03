@@ -41,6 +41,22 @@ type resUrl struct {
 	url string
 }
 
+type resCat struct {
+	cat string
+}
+
+type resWhy struct {
+	why string
+}
+
+type resOwOify struct {
+	owo string
+}
+
+type resFact struct {
+	fact string
+}
+
 func Tickle() (string, error) {
 	res, err := http.Get(endPoint + pathTickle)
 	if err != nil {
@@ -227,13 +243,13 @@ func Why() (string, error) {
 		return "", err
 	}
 
-	var url resUrl
-	err = json.NewDecoder(res.Body).Decode(&url)
+	var body resWhy
+	err = json.NewDecoder(res.Body).Decode(&body)
 	if err != nil {
 		return "", err
 	}
 
-	return url.url, nil
+	return body.why, nil
 }
 
 func CatText() (string, error) {
@@ -242,13 +258,13 @@ func CatText() (string, error) {
 		return "", err
 	}
 
-	var url resUrl
-	err = json.NewDecoder(res.Body).Decode(&url)
+	var body resCat
+	err = json.NewDecoder(res.Body).Decode(&body)
 	if err != nil {
 		return "", err
 	}
 
-	return url.url, nil
+	return body.cat, nil
 }
 
 func OwOify() (string, error) {
@@ -257,13 +273,13 @@ func OwOify() (string, error) {
 		return "", err
 	}
 
-	var url resUrl
-	err = json.NewDecoder(res.Body).Decode(&url)
+	var body resOwOify
+	err = json.NewDecoder(res.Body).Decode(&body)
 	if err != nil {
 		return "", err
 	}
 
-	return url.url, nil
+	return body.owo, nil
 }
 
 func EightBall() (string, error) {
@@ -287,13 +303,13 @@ func Fact() (string, error) {
 		return "", err
 	}
 
-	var url resUrl
-	err = json.NewDecoder(res.Body).Decode(&url)
+	var body resFact
+	err = json.NewDecoder(res.Body).Decode(&body)
 	if err != nil {
 		return "", err
 	}
 
-	return url.url, nil
+	return body.fact, nil
 }
 
 func NekoGif() (string, error) {
