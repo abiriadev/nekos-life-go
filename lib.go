@@ -157,8 +157,19 @@ func CatText() (string, error) {
 	return getInternal[resCat](pathCatText)
 }
 
-func OwOify() (string, error) {
-	return getInternal[resOwOify](pathOwOify)
+func OwOify(text string) (string, error) {
+	res, err := http.Get(endPoint + pathOwOify + "?text=" + text)
+	if err != nil {
+		return "", err
+	}
+
+	var body resOwOify
+	err = json.NewDecoder(res.Body).Decode(&body)
+	if err != nil {
+		return "", err
+	}
+
+	return body.primary(), nil
 }
 
 func EightBall() (EightBallResult, error) {
