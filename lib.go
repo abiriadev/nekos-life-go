@@ -1,5 +1,35 @@
 package nekoslifego
 
+const pathTickle = "/img/tickle"
+const pathSlap = "/img/slap"
+const pathPoke = "/img/poke"
+const pathPat = "/img/pat"
+const pathNeko = "/img/neko"
+const pathMeow = "/img/meow"
+const pathLizard = "/img/lizard"
+const pathKiss = "/img/kiss"
+const pathHug = "/img/hug"
+const pathFoxGirl = "/img/fox_girl"
+const pathFeed = "/img/feed"
+const pathCuddle = "/img/cuddle"
+const pathWhy = "/why"
+const pathCatText = "/cat"
+const pathOwOify = "/owoify"
+const pathEightBall = "/8ball"
+const pathFact = "/fact"
+const pathNekoGif = "/img/ngif"
+const pathKemonomimi = "/img/kemonomimi"
+const pathHolo = "/img/holo"
+const pathSmug = "/img/smug"
+const pathBaka = "/img/baka"
+const pathWoof = "/img/woof"
+const pathSpoiler = "/spoiler"
+const pathWallpaper = "/img/wallpaper"
+const pathGoose = "/img/goose"
+const pathGecg = "/img/gecg"
+const pathAvatar = "/img/avatar"
+const pathWaifu = "/img/waifu"
+
 func Tickle() string     { return "" }
 func Slap() string       { return "" }
 func Poke() string       { return "" }
