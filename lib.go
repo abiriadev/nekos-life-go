@@ -81,229 +81,79 @@ func (r resFact) primary() string {
 	return r.fact
 }
 
+func getInternal[T res](path string) (string, error) {
+	res, err := http.Get(endPoint + path)
+	if err != nil {
+		return "", err
+	}
+
+	var body T
+	err = json.NewDecoder(res.Body).Decode(&body)
+	if err != nil {
+		return "", err
+	}
+
+	return body.primary(), nil
+}
+
 func Tickle() (string, error) {
-	res, err := http.Get(endPoint + pathTickle)
-	if err != nil {
-		return "", err
-	}
-
-	var url resUrl
-	err = json.NewDecoder(res.Body).Decode(&url)
-	if err != nil {
-		return "", err
-	}
-
-	return url.url, nil
+	return getInternal[resUrl](pathTickle)
 }
 
 func Slap() (string, error) {
-	res, err := http.Get(endPoint + pathSlap)
-	if err != nil {
-		return "", err
-	}
-
-	var url resUrl
-	err = json.NewDecoder(res.Body).Decode(&url)
-	if err != nil {
-		return "", err
-	}
-
-	return url.url, nil
+	return getInternal[resUrl](pathSlap)
 }
 
 func Poke() (string, error) {
-	res, err := http.Get(endPoint + pathPoke)
-	if err != nil {
-		return "", err
-	}
-
-	var url resUrl
-	err = json.NewDecoder(res.Body).Decode(&url)
-	if err != nil {
-		return "", err
-	}
-
-	return url.url, nil
+	return getInternal[resUrl](pathPoke)
 }
 
 func Pat() (string, error) {
-	res, err := http.Get(endPoint + pathPat)
-	if err != nil {
-		return "", err
-	}
-
-	var url resUrl
-	err = json.NewDecoder(res.Body).Decode(&url)
-	if err != nil {
-		return "", err
-	}
-
-	return url.url, nil
+	return getInternal[resUrl](pathPat)
 }
 
 func Neko() (string, error) {
-	res, err := http.Get(endPoint + pathNeko)
-	if err != nil {
-		return "", err
-	}
-
-	var url resUrl
-	err = json.NewDecoder(res.Body).Decode(&url)
-	if err != nil {
-		return "", err
-	}
-
-	return url.url, nil
+	return getInternal[resUrl](pathNeko)
 }
 
 func Meow() (string, error) {
-	res, err := http.Get(endPoint + pathMeow)
-	if err != nil {
-		return "", err
-	}
-
-	var url resUrl
-	err = json.NewDecoder(res.Body).Decode(&url)
-	if err != nil {
-		return "", err
-	}
-
-	return url.url, nil
+	return getInternal[resUrl](pathMeow)
 }
 
 func Lizard() (string, error) {
-	res, err := http.Get(endPoint + pathLizard)
-	if err != nil {
-		return "", err
-	}
-
-	var url resUrl
-	err = json.NewDecoder(res.Body).Decode(&url)
-	if err != nil {
-		return "", err
-	}
-
-	return url.url, nil
+	return getInternal[resUrl](pathLizard)
 }
 
 func Kiss() (string, error) {
-	res, err := http.Get(endPoint + pathKiss)
-	if err != nil {
-		return "", err
-	}
-
-	var url resUrl
-	err = json.NewDecoder(res.Body).Decode(&url)
-	if err != nil {
-		return "", err
-	}
-
-	return url.url, nil
+	return getInternal[resUrl](pathKiss)
 }
 
 func Hug() (string, error) {
-	res, err := http.Get(endPoint + pathHug)
-	if err != nil {
-		return "", err
-	}
-
-	var url resUrl
-	err = json.NewDecoder(res.Body).Decode(&url)
-	if err != nil {
-		return "", err
-	}
-
-	return url.url, nil
+	return getInternal[resUrl](pathHug)
 }
 
 func FoxGirl() (string, error) {
-	res, err := http.Get(endPoint + pathFoxGirl)
-	if err != nil {
-		return "", err
-	}
-
-	var url resUrl
-	err = json.NewDecoder(res.Body).Decode(&url)
-	if err != nil {
-		return "", err
-	}
-
-	return url.url, nil
+	return getInternal[resUrl](pathFoxGirl)
 }
 
 func Feed() (string, error) {
-	res, err := http.Get(endPoint + pathFeed)
-	if err != nil {
-		return "", err
-	}
-
-	var url resUrl
-	err = json.NewDecoder(res.Body).Decode(&url)
-	if err != nil {
-		return "", err
-	}
-
-	return url.url, nil
+	return getInternal[resUrl](pathFeed)
 }
 
 func Cuddle() (string, error) {
-	res, err := http.Get(endPoint + pathCuddle)
-	if err != nil {
-		return "", err
-	}
-
-	var url resUrl
-	err = json.NewDecoder(res.Body).Decode(&url)
-	if err != nil {
-		return "", err
-	}
-
-	return url.url, nil
+	return getInternal[resUrl](pathCuddle)
 }
 
 func Why() (string, error) {
-	res, err := http.Get(endPoint + pathWhy)
-	if err != nil {
-		return "", err
-	}
-
-	var body resWhy
-	err = json.NewDecoder(res.Body).Decode(&body)
-	if err != nil {
-		return "", err
-	}
-
-	return body.why, nil
+	return getInternal[resWhy](pathWhy)
 }
 
 func CatText() (string, error) {
-	res, err := http.Get(endPoint + pathCatText)
-	if err != nil {
-		return "", err
-	}
-
-	var body resCat
-	err = json.NewDecoder(res.Body).Decode(&body)
-	if err != nil {
-		return "", err
-	}
-
-	return body.cat, nil
+	return getInternal[resCat](pathCatText)
 }
 
 func OwOify() (string, error) {
-	res, err := http.Get(endPoint + pathOwOify)
-	if err != nil {
-		return "", err
-	}
-
-	var body resOwOify
-	err = json.NewDecoder(res.Body).Decode(&body)
-	if err != nil {
-		return "", err
-	}
-
-	return body.owo, nil
+	return getInternal[resOwOify](pathOwOify)
 }
 
 func EightBall() (string, error) {
@@ -322,198 +172,53 @@ func EightBall() (string, error) {
 }
 
 func Fact() (string, error) {
-	res, err := http.Get(endPoint + pathFact)
-	if err != nil {
-		return "", err
-	}
-
-	var body resFact
-	err = json.NewDecoder(res.Body).Decode(&body)
-	if err != nil {
-		return "", err
-	}
-
-	return body.fact, nil
+	return getInternal[resFact](pathFact)
 }
 
 func NekoGif() (string, error) {
-
-	res, err := http.Get(endPoint + pathNekoGif)
-	if err != nil {
-		return "", err
-	}
-
-	var url resUrl
-	err = json.NewDecoder(res.Body).Decode(&url)
-	if err != nil {
-		return "", err
-	}
-
-	return url.url, nil
+	return getInternal[resUrl](pathNekoGif)
 }
 
 func Kemonomimi() (string, error) {
-
-	res, err := http.Get(endPoint + pathKemonomimi)
-	if err != nil {
-		return "", err
-	}
-
-	var url resUrl
-	err = json.NewDecoder(res.Body).Decode(&url)
-	if err != nil {
-		return "", err
-	}
-
-	return url.url, nil
+	return getInternal[resUrl](pathKemonomimi)
 }
 
 func Holo() (string, error) {
-	res, err := http.Get(endPoint + pathHolo)
-	if err != nil {
-		return "", err
-	}
-
-	var url resUrl
-	err = json.NewDecoder(res.Body).Decode(&url)
-	if err != nil {
-		return "", err
-	}
-
-	return url.url, nil
+	return getInternal[resUrl](pathHolo)
 }
 
 func Smug() (string, error) {
-	res, err := http.Get(endPoint + pathSmug)
-	if err != nil {
-		return "", err
-	}
-
-	var url resUrl
-	err = json.NewDecoder(res.Body).Decode(&url)
-	if err != nil {
-		return "", err
-	}
-
-	return url.url, nil
+	return getInternal[resUrl](pathSmug)
 }
 
 func Baka() (string, error) {
-	res, err := http.Get(endPoint + pathBaka)
-	if err != nil {
-		return "", err
-	}
-
-	var url resUrl
-	err = json.NewDecoder(res.Body).Decode(&url)
-	if err != nil {
-		return "", err
-	}
-
-	return url.url, nil
+	return getInternal[resUrl](pathBaka)
 }
 
 func Woof() (string, error) {
-	res, err := http.Get(endPoint + pathWoof)
-	if err != nil {
-		return "", err
-	}
-
-	var url resUrl
-	err = json.NewDecoder(res.Body).Decode(&url)
-	if err != nil {
-		return "", err
-	}
-
-	return url.url, nil
+	return getInternal[resUrl](pathWoof)
 }
 
 func Spoiler() (string, error) {
-	res, err := http.Get(endPoint + pathSpoiler)
-	if err != nil {
-		return "", err
-	}
-
-	var url resUrl
-	err = json.NewDecoder(res.Body).Decode(&url)
-	if err != nil {
-		return "", err
-	}
-
-	return url.url, nil
+	return getInternal[resUrl](pathSpoiler)
 }
 
 func Wallpaper() (string, error) {
-	res, err := http.Get(endPoint + pathWallpaper)
-	if err != nil {
-		return "", err
-	}
-
-	var url resUrl
-	err = json.NewDecoder(res.Body).Decode(&url)
-	if err != nil {
-		return "", err
-	}
-
-	return url.url, nil
-}
+	return getInternal[resUrl](pathWallpaper)
+}URLSearchParams
 
 func Goose() (string, error) {
-	res, err := http.Get(endPoint + pathGoose)
-	if err != nil {
-		return "", err
-	}
-
-	var url resUrl
-	err = json.NewDecoder(res.Body).Decode(&url)
-	if err != nil {
-		return "", err
-	}
-
-	return url.url, nil
+	return getInternal[resUrl](pathGoose)
 }
 
 func Gecg() (string, error) {
-	res, err := http.Get(endPoint + pathGecg)
-	if err != nil {
-		return "", err
-	}
-
-	var url resUrl
-	err = json.NewDecoder(res.Body).Decode(&url)
-	if err != nil {
-		return "", err
-	}
-
-	return url.url, nil
+	return getInternal[resUrl](pathGecg)
 }
 
 func Avatar() (string, error) {
-	res, err := http.Get(endPoint + pathAvatar)
-	if err != nil {
-		return "", err
-	}
-
-	var url resUrl
-	err = json.NewDecoder(res.Body).Decode(&url)
-	if err != nil {
-		return "", err
-	}
-
-	return url.url, nil
+	return getInternal[resUrl](pathAvatar)
 }
 
 func Waifu() (string, error) {
-	res, err := http.Get(endPoint + pathWaifu)
-	if err != nil {
-		return "", err
-	}
-
-	var url resUrl
-	err = json.NewDecoder(res.Body).Decode(&url)
-	if err != nil {
-		return "", err
-	}
-
-	return url.url, nil
+	return getInternal[resUrl](pathWaifu)
 }
