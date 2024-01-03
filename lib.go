@@ -45,7 +45,7 @@ type resUrl struct {
 	url string
 }
 
-func (r *resUrl) primary() string {
+func (r resUrl) primary() string {
 	return r.url
 }
 
@@ -53,7 +53,7 @@ type resCat struct {
 	cat string
 }
 
-func (r *resCat) primary() string {
+func (r resCat) primary() string {
 	return r.cat
 }
 
@@ -61,7 +61,7 @@ type resWhy struct {
 	why string
 }
 
-func (r *resWhy) primary() string {
+func (r resWhy) primary() string {
 	return r.why
 }
 
@@ -69,7 +69,7 @@ type resOwOify struct {
 	owo string
 }
 
-func (r *resOwOify) primary() string {
+func (r resOwOify) primary() string {
 	return r.owo
 }
 
@@ -77,7 +77,7 @@ type resFact struct {
 	fact string
 }
 
-func (r *resFact) primary() string {
+func (r resFact) primary() string {
 	return r.fact
 }
 
